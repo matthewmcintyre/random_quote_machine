@@ -1,5 +1,5 @@
 {
-  "main.css": "/random_quote_machine/static/css/main.e65264b2.chunk.css",
+  "main.css": "/random_quote_machine/static/css/main.17596b67.chunk.css",
   "main.js": "/random_quote_machine/static/js/main.30dbf6bc.chunk.js",
   "main.js.map": "/random_quote_machine/static/js/main.30dbf6bc.chunk.js.map",
   "runtime~main.js": "/random_quote_machine/static/js/runtime~main.218f8e92.js",
@@ -7,7 +7,7 @@
   "static/js/2.662d46c0.chunk.js": "/random_quote_machine/static/js/2.662d46c0.chunk.js",
   "static/js/2.662d46c0.chunk.js.map": "/random_quote_machine/static/js/2.662d46c0.chunk.js.map",
   "index.html": "/random_quote_machine/index.html",
-  "precache-manifest.c743150e0612abcfc078bd09c77a0305.js": "/random_quote_machine/precache-manifest.c743150e0612abcfc078bd09c77a0305.js",
+  "precache-manifest.47a93905f8624955826a63ea023345bc.js": "/random_quote_machine/precache-manifest.47a93905f8624955826a63ea023345bc.js",
   "service-worker.js": "/random_quote_machine/service-worker.js",
-  "static/css/main.e65264b2.chunk.css.map": "/random_quote_machine/static/css/main.e65264b2.chunk.css.map"
+  "static/css/main.17596b67.chunk.css.map": "/random_quote_machine/static/css/main.17596b67.chunk.css.map"
 }
