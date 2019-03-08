@@ -24,7 +24,7 @@ html {
   padding: 20px;
   margin: 40px;
   width: 80vw;
-  height: 38vh;
+  height: 45vh;
   background-color: white;
   font-family: "Bitter", serif;
 }
@@ -38,9 +38,9 @@ html {
 
 .socialButton {
   background-color: default;
-  width: 10vw;
-  height: 3.2vh;
-  font-size: 4vw;
+  width: 11nvw;
+  height: 9vw;
+  font-size: 3.3vw;
   border-radius: 5px;
   margin: 0px 5px 0px 5px;
   transition: 1s;
@@ -48,7 +48,7 @@ html {
 .myButton {
   background-color: auto;
   width: 25vw;
-  height: 3.2vh;
+  height: 9vw;
   font-size: 3vw;
   border-radius: 5px;
   transition: 1s;
