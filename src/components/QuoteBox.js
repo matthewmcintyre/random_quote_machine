@@ -11,7 +11,9 @@ class QuoteBox extends Component {
       currentQuote: "",
       currentAuthor: "",
       quotesArrPosition: 0,
-      error: null
+      currentColor: "#FE938C",
+      error: null,
+      colorArr: ["#B91372", "#41EAD4", "#FF0022", "#F39237", "#39A9DB"]
     };
   }
 
@@ -22,7 +24,7 @@ class QuoteBox extends Component {
       .then(res => res.json())
       .then(
         result => {
-          let initialArrPosition = this.randomQuotePosition(result.quotes);
+          let initialArrPosition = this.randomArrPosition(result.quotes);
 
           this.setState({
             isLoaded: true,
@@ -41,16 +43,14 @@ class QuoteBox extends Component {
       );
   }
 
-  randomQuotePosition = arr => {
+  randomArrPosition = arr => {
     return Math.floor(Math.random() * arr.length);
   };
 
   newQuote = () => {
-    let rollQuote = Math.floor(Math.random() * this.state.quotesArr.length);
+    let rollQuote = this.randomArrPosition(this.state.quotesArr);
 
-    while (
-      this.randomQuotePosition(this.state.quotesArrPosition) === rollQuote
-    ) {
+    while (this.randomArrPosition(this.state.quotesArrPosition) === rollQuote) {
       rollQuote = Math.floor(Math.random() * this.state.quotesArr.length);
     }
 
@@ -58,16 +58,42 @@ class QuoteBox extends Component {
       currentQuote: this.state.quotesArr[rollQuote].quote,
       currentAuthor: this.state.quotesArr[rollQuote].author
     });
+
+    this.setColor();
   };
 
   newTweet = () => {
     let url =
       "https://twitter.com/intent/tweet?text=" +
       this.state.currentQuote +
-      "- " +
+      "  - " +
       this.state.currentAuthor;
 
     window.open(url);
+  };
+
+  githubPage = () => {
+    window.open("http://matthewmcintyre.me");
+  };
+
+  setBackground = color => {
+    document.documentElement.style =
+      "background: " + this.state.colorArr[this.state.colorArrPosition] + ";";
+  };
+
+  setColor = () => {
+    let rollResult = this.randomArrPosition(this.state.colorArr);
+
+    while (rollResult === this.state.colorArrPosition) {
+      rollResult = this.randomArrPosition(this.state.colorArr);
+    }
+
+    this.setState({
+      currentColor: this.state.colorArr[rollResult],
+      colorArrPosition: rollResult
+    });
+    document.documentElement.style =
+      "background: " + this.state.colorArr[rollResult] + ";";
   };
 
   render() {
@@ -76,14 +102,32 @@ class QuoteBox extends Component {
         <p id="quote">"{this.state.currentQuote}"</p>
         <p id="author">- {this.state.currentAuthor}</p>
         <div className="buttonDiv">
-          <button className="myButton" onClick={this.newQuote}>
+          <button
+            className="myButton hvr-grow-shadow"
+            onClick={this.newQuote}
+            style={{
+              backgroundColor: this.state.currentColor
+            }}
+          >
             New Quote
           </button>
           <div id="socialButtons">
-            <button className="socialButton" onClick={this.newTweet}>
+            <button
+              className="socialButton hvr-grow-shadow"
+              onClick={this.newTweet}
+              style={{
+                backgroundColor: this.state.currentColor
+              }}
+            >
               <FontAwesomeIcon icon={faTwitter} />
             </button>
-            <button className="socialButton" onClick={this.newTweet}>
+            <button
+              className="socialButton hvr-grow-shadow"
+              onClick={this.githubPage}
+              style={{
+                backgroundColor: this.state.currentColor
+              }}
+            >
               <FontAwesomeIcon icon={faGithub} />
             </button>
           </div>
