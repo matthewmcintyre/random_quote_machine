@@ -1,5 +1,6 @@
 {
   "name": "random_quote_machine",
+  "author": "Matthew McIntyre",
   "homepage": "https://matthewmcintyre.github.io/random_quote_machine/",
   "version": "0.1.0",
   "private": true,
